@@ -148,7 +148,7 @@ p{max-width:65ch}
 .hero-cine{position:relative;min-height:clamp(560px,82vh,840px);min-height:clamp(560px,82svh,840px);display:flex;align-items:center;overflow:hidden;border-bottom:var(--hairline)}
 .hero-cine>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
 .hero-cine::after{content:"";position:absolute;inset:0;z-index:1;
-  background:linear-gradient(95deg,rgba(13,18,23,.86) 0%,rgba(13,18,23,.64) 32%,rgba(13,18,23,.24) 62%,rgba(13,18,23,.04) 100%)}
+  background:linear-gradient(95deg,rgba(13,18,23,.92) 0%,rgba(13,18,23,.8) 32%,rgba(13,18,23,.5) 62%,rgba(13,18,23,.2) 100%)  /* 27.07: wzmocnione - hero to jasna kuchnia, biały tekst na niej ginął */}
 .hero-cine .wrap{position:relative;z-index:2;padding-block:var(--space-8)}
 .hero-cine .hero-copy{max-width:660px}
 .hero-cine .eyebrow{color:#fff;margin-bottom:var(--space-5)}
