@@ -646,3 +646,34 @@ footer{view-transition-name:mt-foot}
 .logos-row .lg{display:inline-block;padding:.55rem 1.05rem;border:var(--hairline);border-radius:999px;
   font-size:var(--text-sm);letter-spacing:.01em;color:var(--ink-soft);background:rgba(255,255,255,.55)}
 @media(max-width:720px){.logos-row .lg{font-size:.86rem;padding:.45rem .85rem}}
+
+/* === RESP-FIX 27.07.2026 (niskie okno + telefon) ===
+   Doklejone na końcu = wygrywa kaskadę, nie ruszamy reguł w miejscu. */
+.eyebrow{align-items:flex-start}
+.eyebrow::before{flex:none;margin-top:.62em}
+.eyebrow{text-wrap:balance}
+.hero-cine h1{text-wrap:balance}
+@media(min-width:821px) and (max-height:820px){
+  .hero-cine{min-height:clamp(520px,94svh,780px)}
+  .hero-cine .wrap{padding-block:var(--space-6)}
+  .hero-cine h1{font-size:clamp(2.2rem,1.5rem + 2.6vw,3.6rem);margin-bottom:var(--space-4)}
+  .hero-cine .eyebrow{margin-bottom:var(--space-4)}
+  .hero-cine .lead{margin-bottom:var(--space-5);max-width:44ch}
+}
+@media(max-width:680px){
+  .hero-cine .lead{font-size:.98rem;line-height:1.5;margin-bottom:var(--space-5)}
+  .hero-cine .eyebrow{font-size:.72rem;letter-spacing:.13em;margin-bottom:var(--space-4)}
+  .hero-cine .eyebrow::before{width:20px}
+  .hero-cine h1{margin-bottom:var(--space-4)}
+  .nav .brand .name{line-height:1.15}
+  .nav .brand{padding-right:.6rem}
+}
+@media(max-width:430px){
+  .nav .brand .name{font-size:.95rem;letter-spacing:.06em}
+}
+/* maska linii w animacji nagłówka: JS mierzy linie zanim doładuje się webfont, więc po podmianie
+   fontu tekst rośnie i maska ucina dół linii (na telefonie „pomiaru po montaż." wchodziło na akapit) */
+.mt-lines .mt-line{padding-bottom:.2em;margin-bottom:-.2em}
+.mt-lines.mt-in .mt-line{animation:mt-unmask 0s linear 1.4s forwards}
+@keyframes mt-unmask{to{overflow:visible}}
+/* === /RESP-FIX === */
